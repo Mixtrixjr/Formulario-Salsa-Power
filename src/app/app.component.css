@@ -1,5 +1,6 @@
 .container {
     width: 50%;
+    max-width: 600px; /* Limita el tamaño máximo del contenedor */
     margin: 0 auto;
     text-align: center;
     background-image: url('/assets/imagenes/salsafondo_formulario.jpg'); 
@@ -23,6 +24,8 @@
     width: 100%;
     padding: 10px;
     margin: 10px 0;
+    max-width: 400px; /* Limita el ancho máximo de los inputs */
+    box-sizing: border-box; /* Asegura que el padding no sobrepase el tamaño del contenedor */
   }
   
   h3 {
@@ -36,3 +39,5 @@
     display: block;   /* Evita espacios en blanco debajo de la imagen */
     margin: 0 auto;   /* Centra la imagen horizontalmente */
   }
+
+  
