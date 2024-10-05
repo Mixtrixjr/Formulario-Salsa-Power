@@ -148,6 +148,7 @@ export class AppComponent {
     this.selectedImage = 'assets/imagenes/salsaparaelalma.jpeg';
 }
 
+
 console.log(this.selectedGroup);
 console.log(this.selectedRhythm);
 console.log(this.selectedSalsaIcon);
@@ -162,7 +163,7 @@ const formData = {
 
 
 // Enviar los datos al backend
-this.http.post('/.netlify/functions/saveData', formData).subscribe({
+this.http.post('http://localhost:3000', formData).subscribe({
   next: (response: any) => {
     console.log('Datos guardados correctamente', response);
   },
