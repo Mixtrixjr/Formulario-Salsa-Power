@@ -29,3 +29,10 @@
     margin-top: 20px;
     color: #ff6347; 
   }
+
+  .responsive-image {
+    max-width: 100%;  /* La imagen nunca será más grande que su contenedor */
+    height: auto;     /* Mantiene la proporción de la imagen */
+    display: block;   /* Evita espacios en blanco debajo de la imagen */
+    margin: 0 auto;   /* Centra la imagen horizontalmente */
+  }
