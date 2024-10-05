@@ -8,14 +8,14 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   standalone: true,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  imports: [CommonModule,FormsModule,HttpClientModule]
-  
+  imports: [CommonModule, FormsModule, HttpClientModule]
+
 })
 export class AppComponent {
   title = '¡Salsa Power pone el sabor! 🔥🎶';
   nombre: string = '';
   email: string = '';
-  edad!: number ;
+  edad!: number;
   selectedSalsaIcon = '';
   selectedGroup = '';
   selectedRhythm = '';
@@ -38,140 +38,141 @@ export class AppComponent {
     pink: ['Son', 'Danzón', 'Guaracha', 'Salsa Brava'],
     purple: ['Salsa Romántica', 'Salsa Dura', 'Boogaloo', 'Bolero']
   };
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  onSubmit() 
+  onSubmit() {
+    if (
+      (this.selectedGroup === 'El Gran Combo de Puerto Rico' ||
+        this.selectedGroup === 'La Sonora Matancera' ||
+        this.selectedGroup === 'Dimensión Latina' ||
+        this.selectedGroup === 'Grupo Niche') &&
+      (this.selectedRhythm === 'Son montuno' ||
+        this.selectedRhythm === 'Mambo' ||
+        this.selectedRhythm === 'Guaguancó' ||
+        this.selectedRhythm === 'Chachachá')
+    ) {
+      console.log("if lo mejor de la salsa");
+      this.selectedImage = 'assets/imagenes/Lomejordelasalsa.jpeg';
 
-{
-  if (
-    (this.selectedGroup === 'El Gran Combo de Puerto Rico' ||
-     this.selectedGroup === 'La Sonora Matancera' ||
-     this.selectedGroup === 'Dimensión Latina' ||
-     this.selectedGroup === 'Grupo Niche') &&
-    (this.selectedRhythm === 'Son montuno' ||
-     this.selectedRhythm === 'Mambo' ||
-     this.selectedRhythm === 'Guaguancó' ||
-     this.selectedRhythm === 'Chachachá')
-) {
-    console.log("if lo mejor de la salsa");
-    this.selectedImage = 'assets/imagenes/Lomejordelasalsa.jpeg';
-
-} else if (
-    (this.selectedGroup === 'El Gran Combo de Puerto Rico' ||
-     this.selectedGroup === 'La Sonora Matancera' ||
-     this.selectedGroup === 'Dimensión Latina' ||
-     this.selectedGroup === 'Grupo Niche') &&
-    (this.selectedRhythm === 'Son' ||
-     this.selectedRhythm === 'Danzón' ||
-     this.selectedRhythm === 'Guaracha' ||
-     this.selectedRhythm === 'Salsa Brava')
-) {
-    console.log("if salsa para el alma");
-    this.selectedImage = 'assets/imagenes/salsaparaelalma.jpeg';
+    } else if (
+      (this.selectedGroup === 'El Gran Combo de Puerto Rico' ||
+        this.selectedGroup === 'La Sonora Matancera' ||
+        this.selectedGroup === 'Dimensión Latina' ||
+        this.selectedGroup === 'Grupo Niche') &&
+      (this.selectedRhythm === 'Son' ||
+        this.selectedRhythm === 'Danzón' ||
+        this.selectedRhythm === 'Guaracha' ||
+        this.selectedRhythm === 'Salsa Brava')
+    ) {
+      console.log("if salsa para el alma");
+      this.selectedImage = 'assets/imagenes/salsaparaelalma.jpeg';
 
 
-} else if (
-    (this.selectedGroup === 'Cortijo y su Combo' ||
-     this.selectedGroup === 'La Orquesta de Richie Ray y Bobby Cruz' ||
-     this.selectedGroup === 'La Sonora Ponceña' ||
-     this.selectedGroup === 'La Orquesta de Tito Puente') &&
-    (this.selectedRhythm === 'Son montuno' ||
-     this.selectedRhythm === 'Mambo' ||
-     this.selectedRhythm === 'Guaguancó' ||
-     this.selectedRhythm === 'Chachachá')
-) {
-    console.log("if exitos de la salsa");
-    this.selectedImage = 'assets/imagenes/exitosdelasalsa.jpeg';
-} else if (
-    (this.selectedGroup === 'Cortijo y su Combo' ||
-     this.selectedGroup === 'La Orquesta de Richie Ray y Bobby Cruz' ||
-     this.selectedGroup === 'La Sonora Ponceña' ||
-     this.selectedGroup === 'La Orquesta de Tito Puente') &&
-    (this.selectedRhythm === 'Son' ||
-     this.selectedRhythm === 'Danzón' ||
-     this.selectedRhythm === 'Guaracha' ||
-     this.selectedRhythm === 'Salsa Brava')
-) {
-  console.log("if lo mejor de la salsa");
-  this.selectedImage = 'assets/imagenes/Lomejordelasalsa.jpeg';
+    } else if (
+      (this.selectedGroup === 'Cortijo y su Combo' ||
+        this.selectedGroup === 'La Orquesta de Richie Ray y Bobby Cruz' ||
+        this.selectedGroup === 'La Sonora Ponceña' ||
+        this.selectedGroup === 'La Orquesta de Tito Puente') &&
+      (this.selectedRhythm === 'Son montuno' ||
+        this.selectedRhythm === 'Mambo' ||
+        this.selectedRhythm === 'Guaguancó' ||
+        this.selectedRhythm === 'Chachachá')
+    ) {
+      console.log("if exitos de la salsa");
+      this.selectedImage = 'assets/imagenes/exitosdelasalsa.jpeg';
+    } else if (
+      (this.selectedGroup === 'Cortijo y su Combo' ||
+        this.selectedGroup === 'La Orquesta de Richie Ray y Bobby Cruz' ||
+        this.selectedGroup === 'La Sonora Ponceña' ||
+        this.selectedGroup === 'La Orquesta de Tito Puente') &&
+      (this.selectedRhythm === 'Son' ||
+        this.selectedRhythm === 'Danzón' ||
+        this.selectedRhythm === 'Guaracha' ||
+        this.selectedRhythm === 'Salsa Brava')
+    ) {
+      console.log("if lo mejor de la salsa");
+      this.selectedImage = 'assets/imagenes/Lomejordelasalsa.jpeg';
 
-} else if (
-    (this.selectedGroup === 'Cortijo y su Combo' ||
-     this.selectedGroup === 'La Orquesta de Richie Ray y Bobby Cruz' ||
-     this.selectedGroup === 'La Sonora Ponceña' ||
-     this.selectedGroup === 'La Orquesta de Tito Puente') &&
-    (this.selectedRhythm === 'Salsa Romántica' ||
-     this.selectedRhythm === 'Salsa Dura' ||
-     this.selectedRhythm === 'Boogaloo' ||
-     this.selectedRhythm === 'Bolero')
-) {
-    console.log("if salsa para el alma");
-    this.selectedImage = 'assets/imagenes/salsaparaelalma.jpeg';
+    } else if (
+      (this.selectedGroup === 'Cortijo y su Combo' ||
+        this.selectedGroup === 'La Orquesta de Richie Ray y Bobby Cruz' ||
+        this.selectedGroup === 'La Sonora Ponceña' ||
+        this.selectedGroup === 'La Orquesta de Tito Puente') &&
+      (this.selectedRhythm === 'Salsa Romántica' ||
+        this.selectedRhythm === 'Salsa Dura' ||
+        this.selectedRhythm === 'Boogaloo' ||
+        this.selectedRhythm === 'Bolero')
+    ) {
+      console.log("if salsa para el alma");
+      this.selectedImage = 'assets/imagenes/salsaparaelalma.jpeg';
 
-} else if (
-    (this.selectedGroup === 'Fruko y sus Tesos' ||
-     this.selectedGroup === 'Orquesta Zodiac' ||
-     this.selectedGroup === 'Hermanos Lebrón' ||
-     this.selectedGroup === 'Orquesta Aragón') &&
-    (this.selectedRhythm === 'Son montuno' ||
-     this.selectedRhythm === 'Mambo' ||
-     this.selectedRhythm === 'Guaguancó' ||
-     this.selectedRhythm === 'Chachachá')
-) {
-    console.log("if exitos de la salsa");
-    this.selectedImage = 'assets/imagenes/exitosdelasalsa.jpeg';
+    } else if (
+      (this.selectedGroup === 'Fruko y sus Tesos' ||
+        this.selectedGroup === 'Orquesta Zodiac' ||
+        this.selectedGroup === 'Hermanos Lebrón' ||
+        this.selectedGroup === 'Orquesta Aragón') &&
+      (this.selectedRhythm === 'Son montuno' ||
+        this.selectedRhythm === 'Mambo' ||
+        this.selectedRhythm === 'Guaguancó' ||
+        this.selectedRhythm === 'Chachachá')
+    ) {
+      console.log("if exitos de la salsa");
+      this.selectedImage = 'assets/imagenes/exitosdelasalsa.jpeg';
 
-} else if (
-    (this.selectedGroup === 'Fruko y sus Tesos' ||
-     this.selectedGroup === 'Orquesta Zodiac' ||
-     this.selectedGroup === 'Hermanos Lebrón' ||
-     this.selectedGroup === 'Orquesta Aragón') &&
-    (this.selectedRhythm === 'Son' ||
-     this.selectedRhythm === 'Danzón' ||
-     this.selectedRhythm === 'Guaracha' ||
-     this.selectedRhythm === 'Salsa Brava')
-) {
-    console.log("if lo mejor de la salsa");
-    this.selectedImage = 'assets/imagenes/Lomejordelasalsa.jpeg';
+    } else if (
+      (this.selectedGroup === 'Fruko y sus Tesos' ||
+        this.selectedGroup === 'Orquesta Zodiac' ||
+        this.selectedGroup === 'Hermanos Lebrón' ||
+        this.selectedGroup === 'Orquesta Aragón') &&
+      (this.selectedRhythm === 'Son' ||
+        this.selectedRhythm === 'Danzón' ||
+        this.selectedRhythm === 'Guaracha' ||
+        this.selectedRhythm === 'Salsa Brava')
+    ) {
+      console.log("if lo mejor de la salsa");
+      this.selectedImage = 'assets/imagenes/Lomejordelasalsa.jpeg';
 
-} else if (
-    (this.selectedGroup === 'Fruko y sus Tesos' ||
-     this.selectedGroup === 'Orquesta Zodiac' ||
-     this.selectedGroup === 'Hermanos Lebrón' ||
-     this.selectedGroup === 'Orquesta Aragón') &&
-    (this.selectedRhythm === 'Salsa Romántica' ||
-     this.selectedRhythm === 'Salsa Dura' ||
-     this.selectedRhythm === 'Boogaloo' ||
-     this.selectedRhythm === 'Bolero')
-) {
-    console.log("if salsa para el alma");
-    this.selectedImage = 'assets/imagenes/salsaparaelalma.jpeg';
-}
-
-
-console.log(this.selectedGroup);
-console.log(this.selectedRhythm);
-console.log(this.selectedSalsaIcon);
-console.log(this.edad);
-console.log(this.nombre);
-console.log(this.email);
-const formData = {
-  nombre: this.nombre,
-  email: this.email,
-  edad: this.edad
-};
+    } else if (
+      (this.selectedGroup === 'Fruko y sus Tesos' ||
+        this.selectedGroup === 'Orquesta Zodiac' ||
+        this.selectedGroup === 'Hermanos Lebrón' ||
+        this.selectedGroup === 'Orquesta Aragón') &&
+      (this.selectedRhythm === 'Salsa Romántica' ||
+        this.selectedRhythm === 'Salsa Dura' ||
+        this.selectedRhythm === 'Boogaloo' ||
+        this.selectedRhythm === 'Bolero')
+    ) {
+      console.log("if salsa para el alma");
+      this.selectedImage = 'assets/imagenes/salsaparaelalma.jpeg';
+    }
 
 
-// Enviar los datos al backend
-this.http.post('http://localhost:3000/save-data', formData).subscribe({
-  next: (response: any) => {
-    console.log('Datos guardados correctamente', response);
-  },
-  error: (error: any) => {
-    console.error('Error al guardar los datos', error);
+    console.log(this.selectedGroup);
+    console.log(this.selectedRhythm);
+    console.log(this.selectedSalsaIcon);
+    console.log(this.edad);
+    console.log(this.nombre);
+    console.log(this.email);
+    const formData = {
+      nombre: this.nombre,
+      email: this.email,
+      edad: this.edad
+    };
+
+  
+        // Enviar los datos al backend
+        this.http.post('http://localhost:3000/save-data', formData).subscribe({
+          next: (response: any) => {
+            console.log('Datos guardados correctamente', response);
+          },
+          error: (error: any) => {
+            console.error('Error al guardar los datos', error);
+          }
+        });
+    
+
   }
-});
-}
+
 
 }
 
